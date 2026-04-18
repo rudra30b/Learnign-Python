@@ -1,1 +1,75 @@
-<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Learning Python</title>\n    <style>\n        body {\n            font-family: Arial, sans-serif;\n            background-color: #f0f0f0;\n            margin: 0;\n            padding: 20px;\n        }\n        h1 {\n            color: #333;\n        }\n        #content {\n            background: white;\n            padding: 15px;\n            border-radius: 5px;\n            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);\n        }\n    </style>\n    <script src=\"https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js\"></script>\n    <script src=\"https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js\"></script>\n    <script src=\"https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js\"></script>\n</head>\n<body>\n    <div id=\"content\">\n        <h1>Learning Python Curriculum</h1>\n        <div id=\"plan\"></div>\n    </div>\n    <script>\n        const firebaseConfig = {\n            apiKey: \"your-api-key\",\n            authDomain: \"your-project-id.firebaseapp.com\",\n            databaseURL: \"https://your-project-id.firebaseio.com\",\n            projectId: \"your-project-id\",\n            storageBucket: \"your-project-id.appspot.com\",\n            messagingSenderId: \"your-messaging-sender-id\",\n            appId: \"your-app-id\"\n        };\n        // Initialize Firebase\n        const app = firebase.initializeApp(firebaseConfig);\n        const database = firebase.database();\n\n        const PLAN = [\n            // Incomplete plan array, include 188 days data here\n            { phase: 'Python', content: 'Introduction', day: 1 },\n            { phase: 'Git', content: 'Git Basics', day: 2 },\n            // Add the rest of the 188 days of learning content\n        ];\n\n        function renderPlan() {\n            const planContainer = document.getElementById('plan');\n            PLAN.forEach(item => {\n                const dayElement = document.createElement('div');\n                dayElement.textContent = \\`Day \\${item.day}: \\${item.phase} - \\${item.content}\\`;\n                planContainer.appendChild(dayElement);\n            });\n        }\n\n        renderPlan();\n    <\/script>\n</body>\n</html>\n
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Command Center</title>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        // Import Firebase
+        import firebase from 'firebase/app';
+        import 'firebase/database';
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            databaseURL: "YOUR_DATABASE_URL",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // React components Go Here
+        function SyncBadge() {
+            // Component Logic
+            return <div>SyncBadge Component</div>;
+        }
+
+        function TodayCard() {
+            // Component Logic
+            return <div>TodayCard Component</div>;
+        }
+
+        function UpcomingList() {
+            // Component Logic
+            return <div>UpcomingList Component</div>;
+        }
+
+        function MiniCal() {
+            // Component Logic
+            return <div>MiniCal Component</div>;
+        }
+
+        function PhaseProgress() {
+            // Component Logic
+            return <div>PhaseProgress Component</div>;
+        }
+
+        function App() {
+            return (
+                <div>
+                    <h1>Welcome to the Learning Command Center</h1>
+                    <SyncBadge />
+                    <TodayCard />
+                    <UpcomingList />
+                    <MiniCal />
+                    <PhaseProgress />
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
